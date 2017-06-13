@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center>
+    <ion-title>History</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button
+      ion-item
+      *ngFor="let test of tests; let i = index"
+      (click)="goToResult(test)">
+      Test {{i + 1}}
+      <ion-note style="float: right">
+        {{ test.createDate | date: 'd-MMM-y h:mm a'}}
+      </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

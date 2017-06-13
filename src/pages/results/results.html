@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar text-center color="primary">
+    <ion-title>Results</ion-title>
+    <ion-buttons end side="primary">
+      <button
+        ion-button
+        icon-only
+        *ngIf="showHome"
+        (click)="toLobby()">
+        <ion-icon name="home">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <canvas #barCanvas></canvas>
+  </ion-card>
+</ion-content>
