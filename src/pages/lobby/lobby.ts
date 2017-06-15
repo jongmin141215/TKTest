@@ -2,13 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QuestionPage } from '../question/question';
 import { HistoryPage } from '../history/history';
+import { AppUserProvider } from '../../providers/app-user/app-user';
+import { LoginPage } from '../login/login';
 
-/**
- * Generated class for the LobbyPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-lobby',
@@ -16,7 +12,9 @@ import { HistoryPage } from '../history/history';
 })
 export class LobbyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public appUserProvider: AppUserProvider) {
   }
 
   ionViewDidLoad() {
@@ -29,5 +27,8 @@ export class LobbyPage {
   viewMyHistory() {
     this.navCtrl.push(HistoryPage);
   }
-
+  logout() {
+    this.appUserProvider.logout(window.localStorage.getItem('token'));
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

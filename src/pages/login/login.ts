@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AppUserProvider } from '../../providers/app-user/app-user';
+import { LobbyPage } from '../lobby/lobby';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,7 @@ export class LoginPage {
             window.localStorage.setItem("userId", res["userId"]);
             console.log("token", res["id"]);
             console.log("userId", res["userId"]);
+            this.navCtrl.push(LobbyPage);
           },
           error => {
             switch(error["status"]) {
