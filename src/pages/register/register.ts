@@ -37,6 +37,12 @@ export class RegisterPage {
             this.navCtrl.push(LobbyPage)
           }, error => {
             switch(error["status"]) {
+              case 400:
+                alert("Bad request");
+                break;
+              case 401:
+                alert("Unauthorized");
+                break;
               case 404:
                 alert("Page not found");
                 break;

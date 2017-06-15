@@ -11,9 +11,13 @@ export class AppUserProvider {
   }
   baseUrl: string = "http://localhost:3000/api";
   path: string = "/AppUsers";
+  loginPath: string = "/AppUsers/login";
 
   register(newUserData) {
     return this.http.post(this.baseUrl + this.path,
     newUserData);
+  }
+  login(userData) {
+    return this.http.post(this.baseUrl + this.loginPath, userData);
   }
 }
