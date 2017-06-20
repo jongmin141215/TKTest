@@ -59,8 +59,6 @@ export class QuestionPage {
       this.slides.slideTo(this.slides.getActiveIndex() + 1);
       this.slides.lockSwipes(true);
     } else {
-
-      // let tests: any = JSON.parse(window.localStorage.getItem("tests")) || [];
       this.testAnswers.createDate = new Date().toISOString();
       this.testAnswers["userId"] = window.localStorage.getItem('userId');
       this.testResultsProvider.saveTest(this.testAnswers, window.localStorage.getItem('token'))
@@ -77,10 +75,6 @@ export class QuestionPage {
             alert("Something went wrong");
           }
         )
-      // tests.push(this.testAnswers);
-      // window.localStorage.setItem("tests", JSON.stringify(tests));
-      // this.navCtrl.setRoot(LobbyPage);
-
     }
   }
 

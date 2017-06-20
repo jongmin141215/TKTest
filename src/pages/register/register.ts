@@ -55,19 +55,8 @@ export class RegisterPage {
               default:
                 alert("Something went wrong");
             }
-            console.log("status", typeof error["status"]);
-            console.log("body", error["_body"]);
-            console.log("Object", Object.keys(error["_body"]));
-            console.log("ok", error["ok"]);
-            console.log("statusText", error["statusText"]);
-            console.log("headers", error["headers"]);
-            console.log("type", error["type"]);
-            console.log("url", error["url"]);
-
-            console.log(Object.keys(error))
           }
         )
-      console.log('submitted');
     }
   }
 

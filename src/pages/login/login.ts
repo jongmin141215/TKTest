@@ -21,7 +21,6 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   login(form: NgForm) {
-    console.log(form);
     if (form.invalid) {
       return alert("Please fill in all of the required fields.");
     } else {
@@ -31,8 +30,6 @@ export class LoginPage {
           res => {
             window.localStorage.setItem("token", res["id"]);
             window.localStorage.setItem("userId", res["userId"]);
-            console.log("token", res["id"]);
-            console.log("userId", res["userId"]);
             this.navCtrl.push(LobbyPage);
           },
           error => {
@@ -55,10 +52,6 @@ export class LoginPage {
               default:
                 alert("Something went wrong");
             }
-            console.log(error);
-            console.log(error["status"]);
-            console.log("statusText", error["statusText"]);
-
           }
         )
     }

@@ -17,13 +17,10 @@ export class HistoryPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoryPage');
-    // this.tests = JSON.parse(window.localStorage.getItem("tests")) || []
     this.testResultsProvider.getTests(window.localStorage.getItem('userId'))
       .map(res => res.json())
       .subscribe(
         res => {
-          console.log(res);
           this.tests = res;
         }, error => {
           console.log(error);
