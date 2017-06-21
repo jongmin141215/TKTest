@@ -30,7 +30,7 @@ export class LoginPage {
           res => {
             window.localStorage.setItem("token", res["id"]);
             window.localStorage.setItem("userId", res["userId"]);
-            this.navCtrl.push(LobbyPage);
+            this.navCtrl.setRoot(LobbyPage);
           },
           error => {
             switch(error["status"]) {

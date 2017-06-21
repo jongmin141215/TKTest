@@ -28,7 +28,18 @@ export class LobbyPage {
     this.navCtrl.push(HistoryPage);
   }
   logout() {
-    this.appUserProvider.logout(window.localStorage.getItem('token'));
+    this.appUserProvider.logout(window.localStorage.getItem('token'))
+      .map(res => res.json())
+      .subscribe(
+        res => {
+          console.log('logout');
+          console.log(res);
+          alert('Successfully logged out');
+        }, err => {
+          console.log(err);
+          alert("Something went wrong");
+        }
+      )
     this.navCtrl.setRoot(LoginPage);
   }
 }
